@@ -21,7 +21,7 @@ jobs:
       - name: Push to GitHub Packages
         uses: docker/build-push-action@v2
         with:
-          repository: ian2/fromgithub
+          context: .
           push: true
           tags: ian2/fromgithub:latest
 
