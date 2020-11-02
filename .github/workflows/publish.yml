@@ -12,13 +12,18 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          registry: registry.stg-platform.hc.ai
+          username: ian2
+          password: ${{ secrets.HARBOR_USER_PASSWORD }}
       - name: Push to GitHub Packages
         uses: docker/build-push-action@v2
         with:
-          username: ian2
-          password: ${{ secrets.HARBOR_USER_PASSWORD }}
-          registry: registry.stg-platform.hc.ai
           repository: ian2/fromgithub
-          tag_with_ref: true
+          push: true
+          tags: ian2/fromgithub:latest
 
 
