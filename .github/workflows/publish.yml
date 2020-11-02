@@ -1,0 +1,21 @@
+name: Publish Docker image
+on:
+  release:
+    types: [published]
+jobs:
+  push_to_registry:
+    name: Push Docker image to GitHub Packages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+      - name: Push to GitHub Packages
+        uses: docker/build-push-action@v1
+        with:
+          username: ian2
+          password: ${{ secrets.HARBOR_USER_PASSWORD }}
+          registry: registry.stg-platform.hc.ai
+          repository: ian2/fromgithub
+          tag_with_ref: true
+
+
