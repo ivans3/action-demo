@@ -1,1 +1,2 @@
-FROM scratch
+FROM ivans3/knowngood:latest
+
