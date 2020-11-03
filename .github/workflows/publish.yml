@@ -29,8 +29,6 @@ jobs:
           tags: |
             registry.stg-platform.hc.ai/ian2/fromgithub:${{ env.GITHUB_SHA_SHORT }}
             registry.stg-platform.hc.ai/ian2/fromgithub:latest
-        env:
-
       - uses: goodsmileduck/helm-push-action@v2
         env:
           CHART_FOLDER: 'some-helm-chart'
