@@ -27,7 +27,7 @@ jobs:
           context: .
           push: true
           tags: |
-            registry.stg-platform.hc.ai/ian2/fromgithub:${{ GITHUB_SHA_SHORT}}
+            registry.stg-platform.hc.ai/ian2/fromgithub:${{ env.GITHUB_SHA_SHORT }}
             registry.stg-platform.hc.ai/ian2/fromgithub:latest
         env:
 
