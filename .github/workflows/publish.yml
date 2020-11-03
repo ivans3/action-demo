@@ -25,6 +25,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: ian2/fromgithub:latest
+          tags: registry.stg-platform.hc.ai/ian2/fromgithub:latest
 
 
