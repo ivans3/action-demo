@@ -25,6 +25,11 @@ jobs:
         with:
           context: .
           push: true
-          tags: registry.stg-platform.hc.ai/ian2/fromgithub:latest
-
-
+          tags: registry.stg-platform.hc.ai/ian2/fromgithub:latest  #for non-docker hub repo, need the registry/ prefix...
+      - uses: goodsmileduck/helm-push-action@v2
+        env:
+          CHART_FOLDER: 'helmchart'
+          FORCE: 'True'
+          CHARTMUSEUM_URL: 'https://registry.stg-platform.hc.ai/chartrepo/ian2'
+          CHARTMUSEUM_USER: ian2
+          CHARTMUSEUM_PASSWORD: ${{ secrets.HARBOR_USER_PASSWORD }}
