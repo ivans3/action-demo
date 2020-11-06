@@ -21,7 +21,7 @@ jobs:
           registry: registry.stg-platform.hc.ai
           username: ian2
           password: ${{ secrets.HARBOR_USER_PASSWORD }}
-      - name: Push to GitHub Packages
+      - name: Push to Harbor
         uses: docker/build-push-action@v2
         with:
           context: .
